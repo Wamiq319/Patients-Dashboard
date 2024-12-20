@@ -69,14 +69,13 @@ const App = () => {
           <DiagnosisHistory
             DiagnosisHistory={jessicaTaylor.diagnosis_history}
           />
-          <div className="overflow-x-auto mt-4 bg-white shadow-lg rounded-lg p-4">
-            <h2 className="text-2xl font-semibold mb-8">Diagnostic List</h2>
-            <DataTable
-              headers={tableHeaders}
-              data={jessicaTaylor.diagnostic_list}
-              customClass="max-h-[300px] sm:max-h-[180px] overflow-y-auto List"
-            />
-          </div>
+
+          <DataTable
+            headers={tableHeaders}
+            data={jessicaTaylor.diagnostic_list}
+            Title="Diagnostic List"
+            customClass="max-h-[300px] sm:max-h-[180px] overflow-y-auto List"
+          />
         </div>
 
         {/* Right section */}

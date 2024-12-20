@@ -1,8 +1,11 @@
 import React from "react";
 
-const DataTable = ({ headers, data, customClass }) => {
+const DataTable = ({ headers, data, customClass, Title }) => {
   return (
-    <>
+    <div className="overflow-x-auto mt-4 bg-white shadow-lg rounded-lg p-4">
+      {/* Header Section  */}
+      <h2 className="text-2xl font-semibold mb-8">{Title}</h2>
+      {/* Body Section  */}
       <div className="overflow-hidden">
         <div className="bg-gray-100 rounded-full">
           <table className="min-w-full table-auto">
@@ -44,7 +47,7 @@ const DataTable = ({ headers, data, customClass }) => {
           </table>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
