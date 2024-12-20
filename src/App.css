@@ -1,0 +1,23 @@
+body {
+  background-color: #e3e4e6;
+  @apply font-manrope;
+}
+.List::-webkit-scrollbar {
+  width: 3px;
+}
+
+.List::-webkit-scrollbar-thumb {
+  background-color: #e3e4e6;
+}
+
+.List::-webkit-scrollbar {
+  width: 5px;
+}
+
+.List::-webkit-scrollbar {
+  width: 7px;
+}
+
+.List::-webkit-scrollbar-thumb {
+  background-color: #072635;
+}
