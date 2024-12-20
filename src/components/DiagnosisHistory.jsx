@@ -193,15 +193,17 @@ const DiagnosisHistory = ({ DiagnosisHistory }) => {
       {/* Bottom Section (Vitals Information) */}
       <div className="flex justify-between items-center mt-6 space-x-4">
         {/* Respiratory Rate Card */}
-        <div className="bg-[#E0F3FA] p-4 rounded-md w-1/3">
+        <div className="bg-[#E0F3FA] p-2 rounded-md w-1/3">
           <div className="flex justify-start">
             <img
               src={respiratoryrate}
               alt="Respiratory Rate"
-              className="h-50 w-50"
+              className="h-20 w-20"
             />
           </div>
-          <div>Respiratory Rate</div>
+          <div className="hidden sm:block r mt-2 font-semibold">
+            Respiratory Rate
+          </div>
           <div className="text-lg font-bold">
             {respiratoryRateData[respiratoryRateData.length - 1].value}bpm
           </div>
@@ -210,11 +212,13 @@ const DiagnosisHistory = ({ DiagnosisHistory }) => {
           </div>
         </div>
         {/* Temperature Card */}
-        <div className="bg-[#FFE6E9] p-4 rounded-md w-1/3">
+        <div className="bg-[#FFE6E9] p-2 rounded-md w-1/3">
           <div className="flex justify-start">
-            <img src={temperature} alt="Temprature" className="h-50 w-50" />
+            <img src={temperature} alt="Temprature" className="h-20 w-20" />
           </div>
-          <div>Temperature</div>
+          <div className="hidden sm:block r mt-2 font-semibold">
+            Temperature
+          </div>
           <div className="text-lg font-bold">
             {temperatureData[temperatureData.length - 1].value}°F
           </div>
@@ -223,11 +227,11 @@ const DiagnosisHistory = ({ DiagnosisHistory }) => {
           </div>
         </div>
         {/* Heart Rate Card */}
-        <div className="bg-[#FFE6F1] p-4 rounded-md w-1/3">
+        <div className="bg-[#FFE6F1] p-2 rounded-md w-1/3">
           <div className="flex justify-start">
-            <img src={HeartBPM} alt="Heart Rate" className="h-50 w-50" />
+            <img src={HeartBPM} alt="Heart Rate" className="h-20 w-20" />
           </div>
-          <div>Heart Rate</div>
+          <div className="hidden sm:block r mt-2 font-semibold">Heart Rate</div>
           <div className="text-lg font-bold">
             {heartRateData[heartRateData.length - 1].value}bpm
           </div>

@@ -6,10 +6,6 @@ body {
   width: 3px;
 }
 
-.List::-webkit-scrollbar-thumb {
-  background-color: #e3e4e6;
-}
-
 .List::-webkit-scrollbar {
   width: 5px;
 }
@@ -20,4 +16,5 @@ body {
 
 .List::-webkit-scrollbar-thumb {
   background-color: #072635;
+  border-radius: 999px;
 }

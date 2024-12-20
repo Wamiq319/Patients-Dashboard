@@ -1,76 +1,66 @@
 import React from "react";
+import BirthIcon from "../assets/BirthIcon.svg";
+import FemaleIcon from "../assets/FemaleIcon.svg";
+import PhoneIcon from "../assets/PhoneIcon.svg";
+import InsuranceIcon from "../assets/InsuranceIcon.svg";
 
 const ProfileInfo = ({ profileInfo }) => {
+  const {
+    profile_picture,
+    name,
+    date_of_birth,
+    gender,
+    age,
+    phone_number,
+    emergency_contact,
+    insurance_type,
+  } = profileInfo;
+
+  // Array of profile details for easy mapping
+  const profileDetails = [
+    { label: "Date of Birth", value: date_of_birth, Icon: BirthIcon },
+    { label: "Gender", value: gender, Icon: FemaleIcon },
+    { label: "Phone Number", value: phone_number, Icon: PhoneIcon },
+    { label: "Emergency Contact", value: emergency_contact, Icon: PhoneIcon },
+    { label: "Insurance Type", value: insurance_type, Icon: InsuranceIcon },
+  ];
+
   return (
     <div className="bg-white p-6 rounded-lg shadow-lg max-w-md mx-auto">
       {/* Profile Picture */}
       <div className="flex justify-center mb-6">
         <img
-          src={profileInfo.profile_picture} // Accessing the profile picture directly from profileInfo
-          alt={profileInfo.name} // Using the name as alt text for the image
-          className="w-32 h-32 rounded-full border-2 border-gray-300"
+          src={profile_picture}
+          alt={name}
+          className="w-44 h-44 rounded-full border-2 border-gray-300"
         />
       </div>
 
       {/* Profile Information */}
-      <div className="space-y-6">
-        {/* Name */}
-        <div className="flex items-center">
-          <div className="font-semibold text-xl text-gray-800">
-            {profileInfo.name}
-          </div>
+      <div className="space-y-3">
+        {/* Profile Name */}
+        <div className="font-semibold text-xl text-gray-800 text-center">
+          {name}
         </div>
 
-        {/* Date of Birth */}
-        <div className="flex items-center space-x-2">
-          <div className="text-sm text-gray-600">Date of Birth</div>
-          <div className="ml-auto text-sm text-gray-800">
-            {profileInfo.date_of_birth}
+        {/* Map through the profile details */}
+        {profileDetails.map((detail, index) => (
+          <div key={index} className="text-txtColor space-x-2 flex">
+            <img src={detail.Icon} alt={detail.label} />
+            <span>
+              <div className="text-sm t">{detail.label}</div>
+              <div className="ml-auto text-sm font-semibold ">
+                {detail.value}
+              </div>
+            </span>
           </div>
-        </div>
-        <hr className="my-2 border-gray-200" />
-
-        {/* Gender */}
-        <div className="flex items-center space-x-2">
-          <div className="text-sm text-gray-600">Gender</div>
-          <div className="ml-auto text-sm text-gray-800">
-            {profileInfo.gender}
-          </div>
-        </div>
-        <hr className="my-2 border-gray-200" />
-
-        {/* Age */}
-        <div className="flex items-center space-x-2">
-          <div className="text-sm text-gray-600">Age</div>
-          <div className="ml-auto text-sm text-gray-800">{profileInfo.age}</div>
-        </div>
-        <hr className="my-2 border-gray-200" />
-
-        {/* Phone Number */}
-        <div className="flex items-center space-x-2">
-          <div className="text-sm text-gray-600">Phone Number</div>
-          <div className="ml-auto text-sm text-gray-800">
-            {profileInfo.phone_number}
-          </div>
-        </div>
-        <hr className="my-2 border-gray-200" />
-
-        {/* Emergency Contact */}
-        <div className="flex items-center space-x-2">
-          <div className="text-sm text-gray-600">Emergency Contact</div>
-          <div className="ml-auto text-sm text-gray-800">
-            {profileInfo.emergency_contact}
-          </div>
-        </div>
-        <hr className="my-2 border-gray-200" />
-
-        {/* Insurance Type */}
-        <div className="flex items-center space-x-2">
-          <div className="text-sm text-gray-600">Insurance Type</div>
-          <div className="ml-auto text-sm text-gray-800">
-            {profileInfo.insurance_type}
-          </div>
-        </div>
+        ))}
+      </div>
+      {/* Profile Information */}
+      <div className="flex justify-center mt-2">
+        <button className="rounded-full px-6 py-3 font-semibold text-sm bg-btnColor">
+          Show All Information
+        </button>
       </div>
     </div>
   );

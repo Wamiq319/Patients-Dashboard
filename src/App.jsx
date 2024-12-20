@@ -4,6 +4,7 @@ import {
   DiagnosisHistory,
   PatientList,
   ProfileInfo,
+  LabResults,
 } from "./components";
 import fetchData from "./hooks/useFetchData";
 import React, { useEffect, useState } from "react";
@@ -28,6 +29,7 @@ const App = () => {
     // You can show a loading state while the data is being fetched
     return <div>Loading...</div>;
   }
+
   const {
     name,
     gender,
@@ -58,12 +60,12 @@ const App = () => {
       {/* Main Content */}
       <main className="flex mx-[9px] flex-col sm:flex-row justify-between my-4">
         {/* Left section */}
-        <div className="left w-full sm:w-[45%] lg:w-[22.94%]">
+        <div className="left w-full sm:w-[45%] lg:w-[22.94%] my-1">
           <PatientList patients={patients} />
         </div>
 
         {/* Middle section */}
-        <div className="mid w-full sm:w-[98%] lg:w-[47.88%]">
+        <div className="mid w-full sm:w-[98%] lg:w-[47.88%] my-1">
           <DiagnosisHistory
             DiagnosisHistory={jessicaTaylor.diagnosis_history}
           />
@@ -78,8 +80,12 @@ const App = () => {
         </div>
 
         {/* Right section */}
-        <div className="right w-full sm:w-[45%] lg:w-[22.94%]">
+        <div className="right w-full sm:w-[45%] lg:w-[22.94%] my-1">
           <ProfileInfo profileInfo={profileData} />
+          <LabResults
+            LabResults={jessicaTaylor.lab_results}
+            customClass="max-h-[300px] sm:max-h-[190px] overflow-y-auto List"
+          />
         </div>
       </main>
     </div>
