@@ -48,7 +48,6 @@ Create a .env file in the root directory and add the API Credentials:
 VITE_API_USERNAME=YOUR API-USERNAME
 VITE_API_PASSWORD=YOUR API-PASSWORD
 VITE_API_BASE_URL=YOUR API-BASE-URL
-Start the development server:
 ```
 Start the development server by 
 ```bash
