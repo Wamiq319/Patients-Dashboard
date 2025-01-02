@@ -2,6 +2,13 @@
 
 ## Overview
 A responsive React-based patient dashboard developed from a client-provided XD design and API endpoint. The task was to convert the design into a responsive UI using React and Tailwind CSS, while dynamically populating patient details from an API.
+## View Demo
+
+This is a live demo of the **Patients Dashboard** application. It provides a visual interface to display Data
+
+You can view the live demo at the following URL:
+
+### [Patients Dashboard Demo](https://wamiq319.github.io/Patients-Dashboard/)
 
 ## Features
 - **Responsive Design**: The dashboard is fully responsive, ensuring a seamless experience across desktop, tablet, and mobile devices.
